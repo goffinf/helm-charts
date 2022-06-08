@@ -15,6 +15,13 @@ If you had already added this repo earlier, run `helm repo update` to retrieve
 the latest versions of the packages.  You can then run `helm search repo
 <alias>` to see the charts.
 
+Example:
+
+    helm search repo gh-helm-charts
+
+    NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+    gh-helm-charts/nginx-hello      0.1.6           1.0             A Helm Chart to manage a deployment of the NGIN...
+
 To install the <chart-name> chart:
 
     cd my-working-dir
