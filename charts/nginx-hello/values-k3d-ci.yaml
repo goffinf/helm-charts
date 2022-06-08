@@ -1,7 +1,7 @@
 # Values for all deployment to a local k3d cluster
 
 image:
-  repository: k3d-registry.localhost:5000/nginxdemos/hello
+  repository: registry.localhost:5000/nginxdemos/hello
 
 ingress:
   host: host.k3d.internal
