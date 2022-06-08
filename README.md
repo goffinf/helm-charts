@@ -36,3 +36,14 @@ Example:
 To uninstall the chart:
 
     helm uninstall <chart-name>
+
+Example:
+    
+    helm ls
+
+    NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+    nginx-hello     default         1               2022-06-08 19:28:28.2378383 +0100 BST   deployed        nginx-hello-0.1.6       1.0
+
+    helm uninstall nginx-hello
+    
+    release "nginx-hello" uninstalled
