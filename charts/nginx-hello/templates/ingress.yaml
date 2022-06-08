@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "nginx-hello.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "nginx-hello.name" . }}
+  {{- if .Values.stickySession }}
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+  {{- end }}
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/nginx-hello"
+        backend:
+          service:
+            name: {{ include "nginx-hello.name" . }}
+            port:
+              number: {{ .Values.service.port }}

@@ -1,0 +1,46 @@
+# Common values for all deployments
+
+name: nginx-hello
+
+hostAliases:
+  vaultPrimary:
+    name: "proxmox.vault-primary.homelab"
+    ip: "192.168.0.220"
+  vaultTransit:
+    name: "proxmox.vault-transit.homelab"
+    ip: "192.168.0.225"
+  k8sApiServerProxmox:
+    name: "k3s-proxmox.homelab"
+    ip: "192.168.0.188"
+  k8sApiServerK3d:
+    name: "host.desktop.homelab"
+    ip: "192.168.0.9"
+  nas:
+    name: "diskstation"
+    ip: "192.168.0.16"
+#  desktop:
+#    name: "host.desktop.homelab"
+#    ip: "192.168.0.29"
+
+image:
+  tag: latest
+  pullPolicy: IfNotPresent
+
+namespace:
+  name: default
+
+replicaCount: 2
+
+serviceAccountName: default
+
+service:
+  type: ClusterIP
+  port: 8082
+  targetPort: 80
+
+securityContext:
+  runAsUser: 101
+  runAsGroup: 101
+
+stickySession: false
+

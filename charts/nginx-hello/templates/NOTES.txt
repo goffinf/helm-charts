@@ -1,0 +1,8 @@
+Check the deployment on k3d using:
+
+curl http://host.k3d.internal:8080/nginx-hello
+
+-OR-
+
+curl -H "Host: host.k3d.internal" http://localhost:8080/nginx-hello
+
