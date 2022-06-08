@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  nginx-hello:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-06-08T15:47:38.374512563Z"
+    description: A Helm Chart to manage a deployment of the NGINX Hello World App
+    digest: c08c7977e58ce46bd98f5ce1cd600fb5325fa065deed44425ccff0ef3cf0d25e
+    name: nginx-hello
+    urls:
+    - https://github.com/goffinf/helm-charts/releases/download/nginx-hello-0.1.4/nginx-hello-0.1.4.tgz
+    version: 0.1.4
+generated: "2022-06-08T15:47:38.374517063Z"
