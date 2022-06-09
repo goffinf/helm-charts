@@ -22,7 +22,7 @@ Example:
     NAME                            CHART VERSION   APP VERSION     DESCRIPTION
     gh-helm-charts/nginx-hello      0.1.6           1.0             A Helm Chart to manage a deployment of the NGIN...
 
-To install the <chart-name> chart:
+To install the chart:
 
     cd my-working-dir
     helm pull --untar --version <version> <alias>/<chart-name>
@@ -32,7 +32,17 @@ Example:
 
     helm pull --untar --version 0.1.6 gh-helm-charts/nginx-hello
     helm --debug upgrade nginx-hello --values nginx-hello/values-common.yaml --values nginx-hello/values-k3d-ci.yaml ./nginx-hello --version 0.1.6 --namespace=default --install --force --dry-run
-  
+
+To access the application (nginx-hello on k3d):
+
+    curl http://host.k3d.internal:8080/nginx-hello
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Hello World</title>
+    ...
+
 To uninstall the chart:
 
     helm uninstall <chart-name>
